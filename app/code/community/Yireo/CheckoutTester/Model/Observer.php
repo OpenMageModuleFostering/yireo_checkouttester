@@ -4,25 +4,26 @@
  *
  * @author Yireo
  * @package CheckoutTester
- * @copyright Copyright 2016
+ * @copyright Copyright 2014
  * @license Open Source License (OSL v3)
- * @link https://www.yireo.com
+ * @link http://www.yireo.com
  */
 
-/**
+/*
  * CheckoutTester observer to various Magento events
  */
-class Yireo_CheckoutTester_Model_Observer
+class Yireo_CheckoutTester_Model_Observer extends Mage_Core_Model_Abstract
 {
-    /**
+    /*
      * Method fired on the event <controller_action_predispatch>
      *
+     * @access public
      * @param Varien_Event_Observer $observer
      * @return Yireo_CheckoutTester_Model_Observer
-     * @deprecated
      */
     public function controllerActionPredispatch($observer)
     {
-        return $this;
+        // Run the feed
+        Mage::getModel('checkouttester/feed')->updateIfAllowed();
     }
 }

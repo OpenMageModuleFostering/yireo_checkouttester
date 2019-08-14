@@ -4,12 +4,12 @@
  *
  * @author Yireo
  * @package Yireo_Common
- * @copyright Copyright 2016
+ * @copyright Copyright 2014
  * @license Open Source License (OSL v3) (OSL)
- * @link https://www.yireo.com
+ * @link http://www.yireo.com
  */
 
-/**
+/*
  * Feed Model
  */
 class Yireo_CheckoutTester_Model_Feed extends Mage_AdminNotification_Model_Feed
@@ -17,7 +17,7 @@ class Yireo_CheckoutTester_Model_Feed extends Mage_AdminNotification_Model_Feed
     /**
      * Return the feed URL
      */
-    protected $customFeedUrl = 'https://www.yireo.com/extfeed?format=feed&platform=magento&extension=checkouttester';
+    protected $customFeedUrl = 'www.yireo.com/extfeed?format=feed&platform=magento&extension=checkouttester';
 
     /**
      * Return the feed URL
@@ -26,7 +26,7 @@ class Yireo_CheckoutTester_Model_Feed extends Mage_AdminNotification_Model_Feed
      */
     public function getFeedUrl() 
     {
-        return $this->customFeedUrl;
+        return Mage::getStoreConfigFlag(self::XML_USE_HTTPS_PATH) ? 'https://' : 'http://'.$this->customFeedUrl;
     }
 
     /**
