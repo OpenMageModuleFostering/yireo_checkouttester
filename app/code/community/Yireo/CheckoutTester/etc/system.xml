@@ -4,8 +4,8 @@
  * Yireo CheckoutTester for Magento 
  *
  * @package     Yireo_CheckoutTester
- * @author      Yireo (http://www.yireo.com/)
- * @copyright   Copyright (C) 2014 Yireo (http://www.yireo.com/)
+ * @author      Yireo (https://www.yireo.com/)
+ * @copyright   Copyright 2016 Yireo (https://www.yireo.com/)
  * @license     Open Source License (OSL v3)
  */
 -->
@@ -21,7 +21,7 @@
             <label>Checkout Tester</label>
             <tab>yireo</tab>
             <frontend_type>text</frontend_type>
-            <sort_order>1000</sort_order>
+            <sort_order>30</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
@@ -31,8 +31,8 @@
                     <frontend_type>text</frontend_type>
                     <sort_order>1</sort_order>
                     <show_in_default>1</show_in_default>
-                    <show_in_website>0</show_in_website>
-                    <show_in_store>0</show_in_store>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
                     <fields>
                         <order_id translate="label">
                             <label>Sales Order ID</label>
@@ -53,8 +53,8 @@
                             <show_in_store>1</show_in_store>
                         </ip>
                         <checkout_onepage_controller_success_action translate="label">
-                            <label>Enabled</label>
-                            <comment><![CDATA[Generate event checkout_onepage_controller_success_action]]></comment>
+                            <label>Generate event</label>
+                            <comment><![CDATA[Event "checkout_onepage_controller_success_action"]]></comment>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>3</sort_order>
@@ -62,6 +62,13 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </checkout_onepage_controller_success_action>
+                        <frontend_link translate="label" module="paypal">
+                            <frontend_model>checkouttester/field_link</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </frontend_link>
                     </fields>
                 </settings>
             </groups>
